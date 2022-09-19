@@ -1,5 +1,4 @@
-# rewirte_huihuiblog
-关于重写 huihuiblog 的 blog（计划阶段）
+## 关于重写 huihuiblog 的 blog（计划阶段）
 
 1. [x] 用 typescript 重写
 2. [x] markdown 序号 bug
