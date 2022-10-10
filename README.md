@@ -1,4 +1,4 @@
-## 关于重写 huihuiblog 的 blog（计划阶段）
+## 关于重写 huihuiblog 的 blog
 
 1. [x] 用 nextjs, typescript 重写
 2. [ ] markdown 序号 bug
@@ -34,3 +34,4 @@ function Msg({msg} : {msg: Comment}) { }
 
 <Msg key={index} msg={item}></Msg>; // 父组件发了俩值，只有一个有用
 ```
+5. 官方指导的组件写法快速生成快捷键为 `tsrfce` ，e 指 `default export index`
