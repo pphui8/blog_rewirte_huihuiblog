@@ -37,6 +37,26 @@ function Msg({msg} : {msg: Comment}) { }
 5. 官方指导的组件写法快速生成快捷键为 `tsrfce` ，e 指 `default export index`
 
 6. 让组件 fetch 时报错只报一次：
+> 核心思想：减少 `setXxx` 函数的调用来减少重构次数
 ```ts
+let isShow = false;
+
+const getData = () => {
+  fetch('url')
+    .then(res => res.json()
+    .catch(err =>{
+      toast.Error(err);
+      isShow = true;
+    })
+}
+
+useEffect(() => {
+  getData()
+}, [isShow])
+```
+
+
+
+
 
 
