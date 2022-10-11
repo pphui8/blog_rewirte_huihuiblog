@@ -35,3 +35,8 @@ function Msg({msg} : {msg: Comment}) { }
 <Msg key={index} msg={item}></Msg>; // 父组件发了俩值，只有一个有用
 ```
 5. 官方指导的组件写法快速生成快捷键为 `tsrfce` ，e 指 `default export index`
+
+6. 让组件 fetch 时报错只报一次：
+```ts
+
+
