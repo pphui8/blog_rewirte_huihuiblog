@@ -9,6 +9,10 @@
 7. [ ] 添加 blog 日期显示（github项目创建日期）
 8. [x] 优化后端api
 
+## what's more
+- new 404 page
+- ssg makes browsing faster 
+
 ## 心得
 #### nextjs
 1. 在 `next.config.js` 中设置自动路由跳转，加一个异步函数：
