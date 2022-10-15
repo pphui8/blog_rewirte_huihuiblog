@@ -59,6 +59,7 @@ useEffect(() => {
 }, [isShow])
 ```
 
+7. `module css` 命名不允许中划线，只能下划线（turbofish命名法）（改捏🐎一晚上焯）
 
 
 
