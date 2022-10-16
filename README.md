@@ -12,6 +12,7 @@
 ## what's more
 - new 404 page
 - ssg makes browsing faster 
+- github api authorization
 
 ## 心得
 #### nextjs
