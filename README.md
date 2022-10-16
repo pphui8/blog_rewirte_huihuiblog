@@ -9,7 +9,7 @@
 7. [ ] 添加 blog 日期显示（github项目创建日期）
 8. [x] 优化后端api
 
-## what's more
+## what's new
 - new 404 page
 - ssg makes browsing faster 
 - github api authorization
@@ -62,7 +62,5 @@ useEffect(() => {
 
 7. `module css` 命名不允许中划线，只能下划线（turbofish命名法）（改捏🐎一晚上焯）
 
-
-
-
-
+8. `useContext` 作全局状态管理
+> 1. 
