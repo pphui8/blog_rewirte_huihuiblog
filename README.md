@@ -63,4 +63,30 @@ useEffect(() => {
 7. `module css` 命名不允许中划线，只能下划线（turbofish命名法）（改捏🐎一晚上焯）
 
 8. `useContext` 作全局状态管理
-> 1. 
+> 1. 定义状态组件
+```tsx
+interface Theme {
+  // 数据
+  isNight: Boolean;
+  // 更新数据的函数
+  toggleTheme: () => void;
+}
+export const ThemeContext = React.createContext<Theme>({
+  isNight: false,
+  toggleTheme: () => {},
+});
+// childern 即所有共享状态的子组件
+export const ThemeContextProvider = ({ children }: any) => {
+  const [theme, setTheme] = React.useState(false);
+  return (
+    <ThemeContext.Provider
+      value={{
+        isNight: theme,
+        toggleTheme: () => setTheme(!theme),
+      }}
+    >
+      <div className={theme ? styles.body_night : ''}>{children}</div>
+    </ThemeContext.Provider>
+  );
+}
+```
