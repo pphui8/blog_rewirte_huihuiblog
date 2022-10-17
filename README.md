@@ -28,18 +28,32 @@
     ];
   },
  ```
+ 
+ ---
+ 
 2. `nextjs` 的 css 强制使用 module 来作为组件级的样式表，而且不允许随便引用（真sb）
+
+---
+
 3. 奇淫技巧：ts 由于类型限制无法使用 `obj[key]` 的形式来直接对对象取值：
 ```ts
 obj[key as keyof typeof obj]
 ```
+
+---
+
 4. 组件只取特定的父组件发来的值：
 ```ts
 function Msg({msg} : {msg: Comment}) { }
 
 <Msg key={index} msg={item}></Msg>; // 父组件发了俩值，只有一个有用
 ```
+
+---
+
 5. 官方指导的组件写法快速生成快捷键为 `tsrfce` ，e 指 `default export index`
+
+---
 
 6. 让组件 fetch 时报错只报一次：
 > 核心思想：减少 `setXxx` 函数的调用来减少重构次数
@@ -60,7 +74,11 @@ useEffect(() => {
 }, [isShow])
 ```
 
+---
+
 7. `module css` 命名不允许中划线，只能下划线（turbofish命名法）（改捏🐎一晚上焯）
+
+---
 
 8. `useContext` 作全局状态管理
 > 1. 定义状态组件
@@ -91,7 +109,7 @@ export const ThemeContextProvider = ({ children }: any) => {
 }
 ```
 
-2. 挂载到根组件下
+> 2. 挂载到根组件下
 ```tsx
 import { ThemeContextProvider } from './ThemeContext';
 
@@ -104,7 +122,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 ```
-3. 子组件中调用
+> 3. 子组件中调用
 ```tsx
 import { ThemeContext } from "../ThemeContext";
 
