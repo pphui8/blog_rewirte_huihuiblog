@@ -90,3 +90,17 @@ export const ThemeContextProvider = ({ children }: any) => {
   );
 }
 ```
+
+2. 挂载到根组件下
+```tsx
+import { ThemeContextProvider } from './ThemeContext';
+
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <ThemeContextProvider>
+      <Component {...pageProps} />
+    </ThemeContextProvider>
+  )
+}
+```
