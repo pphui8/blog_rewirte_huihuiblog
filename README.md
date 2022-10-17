@@ -104,3 +104,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 ```
+3. 子组件中调用
+```tsx
+import { ThemeContext } from "../ThemeContext";
+
+const { isNight } = useContext(ThemeContext);
+```
