@@ -136,3 +136,15 @@ type Res = {
   data: Data | Error;
 }
 ```
+
+10. 动态路由组件不刷新：使用 `let` 声明的全局变量不会在页面重新进入时重置
+```tsx
+useEffect(() => {
+  dealIndex(data);    // <- 若 indexHasDeal == true 则直接返回不执行，保证只执行一次
+  return () => {      // <- 在离开页面时重置为 false
+    indexHasDeal = false;
+    cur_index = [];
+    cur_file = [];
+  };
+}, [indexHasDeal]);   // <- 全局变量: let indexHasDeal = false;
+```
