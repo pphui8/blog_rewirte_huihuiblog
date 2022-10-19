@@ -128,3 +128,11 @@ import { ThemeContext } from "../ThemeContext";
 
 const { isNight } = useContext(ThemeContext);
 ```
+
+9. 类似 `golang` 的组合类型错误处理
+可以使用下面语法来处理错误，判断时使用 `data.toString() === '[object Object]'` 来判断，使用 `data as Data` 语法来对类型强制转换。
+```tsx
+type Res = {
+  data: Data | Error;
+}
+```
