@@ -178,4 +178,11 @@ useEffect(() => {
 
 ---
 
+13. 使用 base64 编码 url 避免汉字冲突：
+```tsx
+const encoded = Buffer.from(url).toString('base64');
+const decoded = Buffer.from(url, 'base64').toString('utf-8');
+```
+
+---
 
