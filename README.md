@@ -151,7 +151,7 @@ useEffect(() => {
 
 ---
 
-11. 列表表格一个个加载
+11. 列表元素一个个加载
 > 关键是 `intersection-observer` 组件更改组件是否可视以及根据 `index` 大小设置了动画的 delay
 ```tsx
     <InView
