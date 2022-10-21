@@ -13,6 +13,7 @@
 - new 404 page
 - ssg makes browsing faster 
 - github api authorization
+- better blog view
 
 ## 心得
 #### nextjs
@@ -170,3 +171,11 @@ useEffect(() => {
       )}
     </InView>
 ```
+
+---
+
+12. 注意到很奇怪的一点是在 props 中对象的值为 undefined 时报错为不能序列化。
+
+---
+
+
