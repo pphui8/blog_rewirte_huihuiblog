@@ -148,3 +148,25 @@ useEffect(() => {
   };
 }, [indexHasDeal]);   // <- 全局变量: let indexHasDeal = false;
 ```
+
+---
+
+11. 列表表格一个个加载
+> 关键是 `intersection-observer` 组件更改组件是否可视以及根据 `index` 大小设置了动画的 delay
+```tsx
+    <InView
+      onChange={(inView) => {
+        if (!inView) return;    <- 动画只播放一次
+        setInView(inView);
+      }}
+    >
+      {({ ref }) => (
+        <div
+          className={inView ? styles.inView : ""}
+          style={{ animationDelay: delay * 0.1 + "s" }}   <- 动态设置动画
+        >
+          <components />
+        </div>
+      )}
+    </InView>
+```
