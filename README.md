@@ -93,7 +93,7 @@ export const ThemeContext = React.createContext<Theme>({
   toggleTheme: () => {},
 });
 // childern 即所有共享状态的子组件
-export const ThemeContextProvider = ({ children }: any) => {
+function ThemeContextProvider({ children }: any ) {
   const [theme, setTheme] = React.useState(false);
   return (
     <ThemeContext.Provider
@@ -102,15 +102,17 @@ export const ThemeContextProvider = ({ children }: any) => {
         toggleTheme: () => setTheme(!theme),
       }}
     >
-      <div className={theme ? styles.body_night : ''}>{children}</div>
+      <div className={theme ? styles.body_night : ""}>{children}</div>
     </ThemeContext.Provider>
   );
 }
+
+export default ThemeContextProvider;
 ```
 
 > 2. 挂载到根组件下
 ```tsx
-import { ThemeContextProvider } from './ThemeContext';
+import ThemeContextProvider from './ThemeContext';
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -127,6 +129,8 @@ import { ThemeContext } from "../ThemeContext";
 
 const { isNight } = useContext(ThemeContext);
 ```
+
+---
 
 9. 类似 `golang` 的组合类型错误处理
 可以使用下面语法来处理错误，判断时使用 `data.toString() === '[object Object]'` 来判断，使用 `data as Data` 语法来对类型强制转换。
@@ -184,3 +188,8 @@ const decoded = Buffer.from(url, 'base64').toString('utf-8');
 
 ---
 
+14. 要注意首字母大写的才会被认为是 react 组件，即可以
+```tsx
+const Index = () => {}
+export default Index;
+```
