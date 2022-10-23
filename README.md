@@ -193,3 +193,7 @@ const decoded = Buffer.from(url, 'base64').toString('utf-8');
 const Index = () => {}
 export default Index;
 ```
+
+---
+
+15. 必须使用 `/pages/components/` 存放组件，不然会被当作页面编译。。。
